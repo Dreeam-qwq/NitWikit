@@ -3,6 +3,9 @@ title: 调服务端配置
 sidebar_position: 4
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <!--markdownlint-disable no-duplicate-heading-->
 
 ## 调服务端配置
@@ -324,6 +327,33 @@ max-auto-save-chunks-per-tick: 24
 
 推荐值：
 
+<Tabs>
+  <TabItem value="above-1.21.5" label=">=1.21.5" default>
+```yaml
+chunks:
+    entity-per-chunk-save-limit:
+        area_effect_cloud: 8
+        arrow: 16
+        dragon_fireball: 3
+        egg: 8
+        ender_pearl: 8
+        experience_bottle: 3
+        experience_orb: 16
+        eye_of_ender: 8
+        fireball: 8
+        firework_rocket: 8
+        llama_spit: 3
+        splash_potion: 8
+        lingering_potion: 8
+        shulker_bullet: 8
+        small_fireball: 8
+        snowball: 8
+        spectral_arrow: 16
+        trident: 16
+        wither_skull: 4
+```
+  </TabItem>
+  <TabItem value="below-1.21.4" label="<=1.21.4">
 ```yaml
 chunks:
     entity-per-chunk-save-limit:
@@ -346,6 +376,8 @@ chunks:
         trident: 16
         wither_skull: 4
 ```
+  </TabItem>
+</Tabs>
 
 此项可以设置区块卸载后从内存保存到硬盘时每个区块最大的实体数量，可为每种实体规定一个限制，
 
