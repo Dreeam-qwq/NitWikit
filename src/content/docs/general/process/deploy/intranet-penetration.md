@@ -27,7 +27,7 @@ Cloudflare Tunnel 是 CF 下的免费内网穿透
 优点：
 
 - 免费，无需注册
-- 自带 N TB 高防
+- 477 Tbps 高防
 - 不限流
 - 支持 TCP, UDP, RDP, SSH, HTTP
 - SSH 提供 WebSSH，还可以通过 Access 管理
