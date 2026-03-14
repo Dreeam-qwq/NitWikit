@@ -1079,26 +1079,22 @@ export default defineConfig({
         }),
         AstroPWA({
             registerType: "autoUpdate",
-
+            workbox: {
+                skipWaiting: true,
+                clientsClaim: true,
+                navigateFallback: "/404",
+                ignoreURLParametersMatching: [/./],
+                globPatterns: ["**/*.{html,js,css,png,svg,json,ttf,pf_fragment,pf_index,pf_meta,pagefind,wasm}"]
+            },
+            experimental: {
+                directoryAndTrailingSlashHandler: true
+            },
             manifest: {
                 name: "Cubic Wiki",
                 short_name: "Cubic Wiki",
-                theme_color: "#2196f3",
-                background_color: "#424242",
                 display: "standalone",
-                start_url: "/",
-                icons: [
-                    {
-                        src: "/icons/book-192.png",
-                        sizes: "192x192",
-                        type: "image/png"
-                    },
-                    {
-                        src: "/icons/book-512.png",
-                        sizes: "512x512",
-                        type: "image/png"
-                    }
-                ]
+                theme_color: "#2196f3",
+                background_color: "#424242"
             }
         }),
         mermaid({
@@ -1108,7 +1104,7 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
         ssr: {
-            noExternal: ["naive-ui", "vueuc", "date-fns"]
+            noExternal: ["naive-ui", "vueuc", "date-fns", "workbox-window"]
         }
     }
 });
